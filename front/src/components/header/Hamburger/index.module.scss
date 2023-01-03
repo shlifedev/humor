@@ -1,0 +1,13 @@
+.container{
+  width: 32px;
+  height : 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  transition: all 0.3s ease-out;
+  overflow: hidden;  
+  display: block;
+  @media screen and (min-width:768px){
+    display: none;
+  }
+} 

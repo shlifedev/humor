@@ -1,0 +1,30 @@
+.item{ 
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px; 
+  &:hover { 
+    background-color: rgba(25, 39, 117, 0.1);
+    color : rgb(57, 14, 211);
+    text-underline-offset: 1px;
+    text-decoration: underline;
+    text-decoration-color: rgb(57, 14, 211);
+  }
+}
+ 
+
+.item > a { 
+  display: flex;
+  cursor:pointer; 
+  padding : 8px;
+  column-gap: 8px;
+}
+ 
+ 
+.icon{
+  width : 24px;
+  height : 24px;
+}
+
+.text{  
+  flex-grow: 1;
+}

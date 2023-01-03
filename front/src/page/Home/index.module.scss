@@ -1,0 +1,53 @@
+ .container {
+   display: flex;  
+ }
+
+ .container > .sideBar {
+   flex-basis: 200px; 
+   flex-shrink: 0; 
+   @media screen and (max-width : 768px) {
+      display: none;
+   }
+ }
+
+ .container > .sideBar[toggle=true] { 
+  // 반응형에서 토글되었을때
+ 
+  @media screen and (max-width : 768px) {
+    color : white;
+    display: block; 
+    z-index : 100; 
+    position: fixed;
+    left : 0;
+    top : 0; 
+    height : 100vh;
+  }
+  
+  & > .mainNav{
+    height: 100%;
+  }
+ 
+ }
+ 
+ .container > .subContent { 
+  @media screen and (max-width : 1200px) {
+    display: none;
+  }
+ }
+ .main {
+   flex: 1 1;
+ }
+
+ .mainNav {
+   padding: 8px;  
+ }
+ 
+ .mainWrap {
+   padding: 16px;
+ }
+
+ .close{
+  position: fixed; 
+  right : 24px;
+  top : 12px;
+ }

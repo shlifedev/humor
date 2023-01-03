@@ -1,0 +1,78 @@
+.container{  
+  border : 1px solid rgb(0,0,0,0.1);
+  border-radius: 4px;
+  box-shadow: 1px 1px 14px rgba(0,0,0,0.075);
+  max-width: 640px;
+} 
+ 
+
+.wrap{
+  padding : 16px;
+}
+
+.profileWrap {
+  display: flex;
+  align-items: center;
+}
+
+.profileWrap > .thumbnail > a >  img {
+  width : 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.profile{ 
+  margin-left: 8px;
+  line-height: 120%;
+  font-size: 12px;
+}
+
+.content{
+  margin-top: 8px;
+  // 이미지 크기 + 8px
+  padding : 0px 0px 0px calc(32px + 8px);
+  
+}
+
+.content .title{
+  font-size: 1.5rem;
+  font-weight: 800;
+  word-break: break-word; 
+}
+
+.md{ 
+  mask-image: linear-gradient(rgba(0, 0, 0, 1), transparent); 
+}
+.bottom{
+  display: flex;
+  justify-content: space-between; 
+  padding : 12px 0;
+}
+.bottom .left{
+  display: flex;
+  column-gap: 24px;
+}
+
+.bottom .detailName{
+  @media all and (max-width:640px){
+    display:none;
+  }
+}
+
+.details{
+  display: flex;
+  column-gap: 8px; 
+  align-items: center;
+
+  &:hover > .detailName {
+    text-decoration: underline;
+    text-decoration-color: black; 
+  }
+}  
+ 
+.details > p{
+  font-size: 14px;
+}
+.details > span{
+  font-size: 18px; 
+}

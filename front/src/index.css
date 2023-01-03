@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+ 
+.common-container{
+  max-width: 1200px;  
+  margin : 0 auto;
+  transition: all 0.3s ease-out;
+ 
+}
+.overlay-black[active=true]{
+  display: block;
+  position: fixed;
+  width : 100vw;
+  height : 100vh;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 99;
+}
+
+.overlay-black{
+  display: none;
+}
+@media screen and (max-width:1200px) {
+  .common-container{
+    max-width : 800px;
+  }
+}
