@@ -1,6 +1,8 @@
 import React from "react";
 import scss from "./index.module.scss";
 import { MenuItem } from "./../MenuItem/index";
+
+
 export default function Menu({ items, title, content }) {
   return (
     <ul className={scss.list}>

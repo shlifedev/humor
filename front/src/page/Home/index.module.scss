@@ -28,12 +28,7 @@
   }
  
  }
- 
- .container > .subContent { 
-  @media screen and (max-width : 1200px) {
-    display: none;
-  }
- }
+  
  .main {
    flex: 1 1;
  }

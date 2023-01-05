@@ -1,11 +1,13 @@
 import scss from "./index.module.scss";
 import { Hamburger } from './Hamburger/index';
-export function Header({onMenuToggle}) {
+import { HeaderNav } from "./HeaderNav";
+export function Header({onMenuToggle}) { 
   return (
     <header className={scss.header}>
       <div className={scss.wrap}>
         <div className={scss.left}>
           <Hamburger onMenuToggle={onMenuToggle}></Hamburger>
+          <HeaderNav></HeaderNav>
           <a href="#" className={scss.logo}>Dev</a>
 
           <div className={scss.searchWrap}>
@@ -26,7 +28,7 @@ export function Header({onMenuToggle}) {
             </a>
             <div className={scss.notification}>
               <button>
-                <span class="material-symbols-rounded">notifications</span>
+                <span className="material-symbols-rounded">notifications</span>
               </button>
             </div>
 

@@ -1,4 +1,4 @@
-import { combineReducers, createSlice } from "@reduxjs/toolkit"
+import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   active : false
@@ -11,3 +11,7 @@ export const menuSlice = createSlice({
     enable : (state) => { state.active = true } 
   } 
 });
+
+// actions
+export const {disable, enable} = menuSlice.actions
+export default menuSlice.reducer;

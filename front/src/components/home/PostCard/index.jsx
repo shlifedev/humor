@@ -1,9 +1,5 @@
 import scss from "./index.module.scss";
-export function PostCard({ post}) {
-  const getCommentCount = () => {
-    
-    return post.comments.length;
-  };
+export function PostCard({ post}) { 
   return (
     <article className={scss.container} aria-label="유저 포스트" >
       <div className={scss.wrap}>

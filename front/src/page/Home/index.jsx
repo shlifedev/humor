@@ -1,41 +1,10 @@
-import { Header } from "../../components/header";
-import { PostCard } from "../../components/home/PostCard";
+import { useSelector } from "react-redux";
+import { Header } from "../../components/header"; 
 import { PostGrid } from "../../components/home/PostGrid";
 import Menu from "./../../components/home/Menu/index";
-import scss from "./index.module.scss";
-import { useState } from 'react';
-const items = [
-  {
-    id: 0,
-    href: "",
-    iconSrc: "",
-    text: "개발자 일상공유",
-  },
-  {
-    id: 1,
-    href: "",
-    iconSrc: "",
-    text: "고민거리",
-  },
-  {
-    id: 2,
-    href: "",
-    iconSrc: "",
-    text: "짤방 저장소",
-  },
-  {
-    id: 3,
-    href: "",
-    iconSrc: "",
-    text: "유머글",
-  },
-  {
-    id: 4,
-    href: "",
-    iconSrc: "",
-    text: "비교",
-  },
-];
+import scss from "./index.module.scss"; 
+import { menuItems } from './../../utils/defines';
+ 
 
 const posts = [
   {
@@ -172,24 +141,31 @@ const posts = [
     like: 0,
   },
 ];
- 
-export function Home({menuToggle}) { 
+
+export function Home({ menuToggle }) {
+  const menuActive = useSelector((state)=> state.menu.active) 
   return (
-    <>
+    <div className="common-container">
+      <div
+        className="overlay-black"
+        active={menuActive ? "true" : "false"}
+      ></div>
+
       <Header></Header>
-      <div className={scss.container} >  
-        <aside className={scss.sideBar} toggle={menuToggle ? 'true' : 'false'}> 
-          <nav aria-label="주 메뉴" className={scss.mainNav} > 
-            <Menu items={items}></Menu>
-            <Menu
-              title={"문의"} 
-              items={items} 
-            ></Menu>   
-          </nav> 
-          
-           {
-            menuToggle ? <button className={[scss.close, 'material-symbols-rounded'].join(' ')}>Close</button> : null
-           }
+      <div className={scss.container}>
+        <aside className={scss.sideBar} toggle={menuActive ? "true" : "false"}>
+          <nav aria-label="주 메뉴" className={scss.mainNav}>
+            <Menu items={menuItems}></Menu>
+            <Menu title={"문의"} items={menuItems}></Menu>
+          </nav>
+
+          {menuActive ? (
+            <button
+              className={[scss.close, "material-symbols-rounded"].join(" ")}
+            >
+              Close
+            </button>
+          ) : null}
         </aside>
         <main aria-label="메인 컨텐츠" className={scss.main}>
           <div className={scss.mainWrap}>
@@ -198,9 +174,9 @@ export function Home({menuToggle}) {
         </main>
 
         <aside aria-label="읽어 볼 거리" className={scss.subContent}>
-            .
+          .
         </aside>
       </div>
-    </>
+    </div>
   );
 }
